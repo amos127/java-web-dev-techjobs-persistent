@@ -1,8 +1,5 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
-import org.launchcode.javawebdevtechjobspersistent.models.data.JobRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +16,9 @@ public class Job extends AbstractEntity {
     public Job() {
     }
 
-    public Job(Employer anEmployer, Skill someSkill) {
-        super();
-        this.employer = anEmployer;
-        this.skills.add(someSkill);
+    public Job(Employer employer, List<Skill> skills) {
+        this.employer = employer;
+        this.skills = skills;
     }
 
     public Employer getEmployer() {
