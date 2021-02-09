@@ -16,3 +16,9 @@ SELECT name FROM employer WHERE location LIKE 'Saint Louis';
 DROP TABLE job;
 
 ## Part 4: Test it with SQL
+
+SELECT DISTINCT skill.name, skill.description
+FROM skill
+INNER JOIN job_skills ON skill.id = job_skills.skills_id
+INNER JOIN job ON job.id = job_skills.jobs_id
+ORDER BY skill.name ASC;
