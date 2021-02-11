@@ -22,7 +22,7 @@
                     th:value="${employer.id}"></option>
         </select>
         <a th:href="@{'/employers/add'}">Add Employers</a>
-        <p th:if="${noEmployer}">Employer required. Add employer to start.</p>
+        <p th:if="${noEmployer}" class="error">Employer required. Add employer to start.</p>
     </div>
 
     <div class="form-group">
@@ -33,7 +33,7 @@
         </th:block>
         <a th:href="@{'/skills/add'}">Add Skills</a>
     </div>
-    <p th:if="${noSkills}">At least one skill required.</p>
+    <p th:if="${noSkills}" class="error">At least one skill required.</p>
 
     <input type="submit" value="Add Job" />
 </form>
